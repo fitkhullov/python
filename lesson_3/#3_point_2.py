@@ -5,4 +5,4 @@ def user_info(f_name, s_name, year, city, email, phone):
 
 
 f_name, s_name, year, city, email, phone = input().split()
-user_info(f_name, s_name, year, city, email, phone)
+user_info(f_name = f_name, s_name = s_name, year = year, city = city, email = email, phone = phone)
