@@ -1,6 +1,6 @@
 #point_2
 with open('input_2.txt', 'r') as fout:
-    text = [string.split(' ') for string in fout.read().split('\n')]
+    text = [string.split(' ') for string in fout.readlines()]
     print(len(text)) #кол-во строк
     words_num = 0
     for string in text:
