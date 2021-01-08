@@ -1,9 +1,9 @@
 #point_7
 def fact(n):
-    el = 1
-    for i in range(1, n+1):
-        yield el
-        el *= (i+1)
+    gen_of_fact = 1
+    for increaser in range(1, n+1):
+        yield gen_of_fact
+        gen_of_fact *= (increaser+1)
 
 n = int(input())
 for pos, num in enumerate(fact(n)):
