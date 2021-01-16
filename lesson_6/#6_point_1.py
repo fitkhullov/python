@@ -1,21 +1,31 @@
 #point_1
+import threading
 from time import sleep
 
 class TrafficLight:
     light_order = {'Red': 7, 'Yellow': 2, 'Green': 5}
     def __init__(self):
         self.__color = 'Red'        
-    def running(self):
-        print(self.__color)
-        for i in range(2):
-            sleep(self.light_order[self.__color])
-            self.__color = list(self.light_order)[list(self.light_order).index(self.__color)+1]
+    def running(self):        
+        while True:
             print(self.__color)
-        sleep(self.light_order[self.__color])
-        self.__color = 'Red'
+            curr_color = self.__color            
+            for sec in range(self.light_order[self.__color]):
+                print(sec+1)
+                sleep(1)
+            if curr_color != self.__color:
+                print('Я СЛОМАЛСЯ')
+                break
+            else:
+                self.__color = 'Red' if self.__color == 'Green' else list(self.light_order)[list(self.light_order).index(self.__color) + 1]
+    def change_color(self, color):
+        sleep(0.5)
+        self.__color = color.title()
+        print(self.__color)
         return
 
-
 traf_l = TrafficLight()
-traf_l.running()
-traf_l.running()
+#traf_l.running()
+x = threading.Thread(target = traf_l.running)
+x.start()
+traf_l.change_color('green')
