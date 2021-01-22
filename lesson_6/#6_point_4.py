@@ -23,8 +23,12 @@ class Car:
         return
 
 class TownCar(Car):
+    def __init__(self):
+        self.max_speed = 60
+        super().__init__()
     def show_speed(self):
-        if self.speed > 60:
+        if self.speed > self.max_speed:
+            Car.show_speed(self)
             print('high speed! slow down!')
         else:
             super().show_speed()
@@ -51,13 +55,10 @@ class SportCar(Car):
             print('THEY ARE CLOSE DUDE')
         return
 
-class WorkCar(Car):
-    def show_speed(self):
-        if self.speed > 40:
-            print('high speed! slow down!')
-        else:
-            super().show_speed()
-        return
+class WorkCar(TownCar):
+    def __init__(self):            
+            super().__init__()
+            self.max_speed = 40
 
 class PoliceCar(Car):
     def __init__(self):
@@ -84,11 +85,3 @@ class PoliceCar(Car):
             self.lets_go_for_donuts()
             print('we cant catch him')
         return
-    
-
-sport_car = SportCar()
-sport_car.develop_maximum_speed()
-police_car = PoliceCar()
-police_car.need_to_police(sport_car)
-police_car.show_speed()
-police_car.stop_the_criminal(sport_car)
