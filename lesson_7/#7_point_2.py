@@ -37,6 +37,8 @@ class Coat(Clothes):
         self._b = 0.5
         super().__init__('Пальто', size)
         
+
+        
 class Costume(Clothes):
     def __init__(self,  size = 0):
         self._a = 2
