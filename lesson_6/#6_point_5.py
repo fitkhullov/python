@@ -8,24 +8,21 @@ class Stationery:
 
 class Pen(Stationery):
     def draw(self):
-        self.title = 'pen'
-        print(f'start drawing with {self.title}')
+        print(f'start drawing with pen that named {self.title}')
         return
     
 class Pencil(Stationery):
     def draw(self):
-        self.title = 'pencil'
-        print(f'start drawing with {self.title}')
+        print(f'start drawing with pencil that named  {self.title}')
         return
     
 class Handle(Stationery):
     def draw(self):
-        self.title = 'handle'
-        print(f'start drawing with {self.title}')
+        print(f'start drawing with handle that named {self.title}')
         
-pen = Pen()
-pencil = Pencil()
-handle = Handle()
+pen = Pen('Erich Krause')
+pencil = Pencil('Cherchil')
+handle = Handle('cheap_handle')
 pen.draw()
 pencil.draw()
 handle.draw()
