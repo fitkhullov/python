@@ -121,5 +121,5 @@ class Xerox(Equipment):
         
         
 printer = Printer(True, model = 'xm-104', brand = 'psychotronic',  price = 199)
-scaner = Scaner(3, model = 'xm-105', brand = 'BobaYoba', price = 0)
-xerox = Xerox('diode', model = 'xm-106', brand = 'YobaBoba',  price = 1)
+scaner = Scaner(3, model = 'xm-105', brand = 'Boba', price = 0)
+xerox = Xerox('diode', model = 'xm-106', brand = 'Biba',  price = 1)
